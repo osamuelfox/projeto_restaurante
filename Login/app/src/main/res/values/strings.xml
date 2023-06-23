@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="entrar">Acessar</string>
+    <string name="text_cadastro">Ainda não tem uma conta? Crie agora.</string>
+    <string name="todo">TODO</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="titulo">American Burger</string>
+</resources>

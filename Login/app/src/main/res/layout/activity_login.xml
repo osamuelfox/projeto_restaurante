@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -58,7 +58,7 @@
         tools:ignore="TextFields" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_entrar"
+        android:id="@+id/bt_proximo"
         style="@style/Button"
         android:layout_marginTop="80dp"
         android:text="@string/entrar"
@@ -76,20 +76,21 @@
         app:layout_constraintTop_toBottomOf="@id/containerComponentes"
         />
 
-    <TextView
-        android:id="@+id/text_tela_cadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+    <Button
+        android:id="@+id/text_tela_login"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="88dp"
+        android:backgroundTint="#FFFFFF"
         android:text="@string/text_cadastro"
         android:textColor="@color/cinza"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progresseBar"
-
-        />
+        app:layout_constraintVertical_bias="0.951" />
 
     <TextView
         android:id="@+id/text_conta"
@@ -98,7 +99,10 @@
         android:text="Acesse sua conta"
         android:textSize="20dp"
 
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="172dp" />
+        app:layout_constraintBottom_toTopOf="@+id/containerComponentes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.496" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

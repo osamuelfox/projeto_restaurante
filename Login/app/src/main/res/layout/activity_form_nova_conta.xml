@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".FormActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="205dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/text_conta"
+        android:layout_width="155dp"
+        android:layout_height="29dp"
+        android:text="@string/criar_nova_conta"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/containerComponentes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.496" />
+
+
+    <TextView
+        android:id="@+id/text_passo"
+        android:layout_width="104dp"
+        android:layout_height="26dp"
+        android:text="@string/passo_1_de_2"
+        android:textSize="17sp"
+        android:textColor="@color/cinza"
+        app:layout_constraintBottom_toTopOf="@+id/containerComponentes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_conta"
+        app:layout_constraintVertical_bias="0.325" />
+
+    <View
+        android:id="@+id/containerComponentes"
+        style="@style/ConteinerComponentes"
+        android:layout_width="360dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="75dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.459" />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        style="@style/Edit_Text"
+        android:layout_marginTop="72dp"
+        android:autofillHints=""
+        android:drawableEnd="@drawable/ic_eye"
+        android:hint="@string/senha"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="@+id/containerComponentes"
+        app:layout_constraintTop_toTopOf="@+id/edit_email"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        style="@style/Edit_Text"
+        android:layout_marginTop="76dp"
+        android:autofillHints=""
+        android:drawableEnd="@drawable/ic_email"
+        android:hint="@string/email"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
+
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="@+id/containerComponentes"
+        app:layout_constraintTop_toTopOf="@+id/edit_bairro"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/edit_bairro"
+        style="@style/Edit_Text"
+        android:layout_marginTop="28dp"
+        android:drawableEnd="@drawable/boy"
+        android:hint="@string/nome"
+        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="@+id/containerComponentes"
+        app:layout_constraintTop_toTopOf="@+id/containerComponentes"
+        android:autofillHints="" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_proximo"
+        style="@style/Button"
+        android:layout_marginTop="80dp"
+        android:text="@string/proximo"
+        app:layout_constraintBottom_toBottomOf="@+id/containerComponentes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edit_senha" />
+
+    <Button
+        android:id="@+id/text_tela_login"
+        android:layout_width="365dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="88dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/text_login"
+        android:textColor="@color/cinza"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponentes"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

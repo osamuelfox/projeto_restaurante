@@ -6,4 +6,18 @@
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="titulo">American Burger</string>
+    <string name="nome">Nome</string>
+    <string name="proximo">Próximo</string>
+    <string name="passo_1_de_2">Passo 1 de 2</string>
+    <string name="criar_nova_conta">Criar nova Conta</string>
+    <string name="acesse_sua_conta">Acesse sua conta</string>
+    <string name="passo_2_de_2">passo 2 de 2</string>
+    <string name="endereco">Endereço</string>
+    <string name="bairro">Bairro</string>
+    <string name="cidade">Cidade</string>
+    <string name="uf">UF</string>
+    <string name="cep">CEP</string>
+    <string name="criarConta">Criar Minha Conta</string>
+    <string name="text_login">Já tenho uma conta</string>
+
 </resources>

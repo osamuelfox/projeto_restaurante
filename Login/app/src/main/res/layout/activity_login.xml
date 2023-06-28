@@ -58,9 +58,10 @@
         tools:ignore="TextFields" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_proximo"
+        android:id="@+id/bt_acessar"
         style="@style/Button"
         android:layout_marginTop="80dp"
+
         android:text="@string/entrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,17 +72,19 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerComponentes"
         />
 
-    <Button
-        android:id="@+id/text_tela_login"
+    <TextView
+        android:id="@+id/text_tela_cadrastro"
         android:layout_width="365dp"
         android:layout_height="40dp"
         android:layout_marginTop="88dp"
         android:backgroundTint="#FFFFFF"
+        android:gravity="center"
         android:text="@string/text_cadastro"
         android:textColor="@color/cinza"
         android:textSize="18sp"
@@ -98,7 +101,6 @@
         android:layout_height="31dp"
         android:text="Acesse sua conta"
         android:textSize="20dp"
-
         app:layout_constraintBottom_toTopOf="@+id/containerComponentes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -61,17 +61,17 @@
         app:layout_constraintVertical_bias="0.459" />
 
     <EditText
-        android:id="@+id/edit_senha"
+        android:id="@+id/edit_nome"
         style="@style/Edit_Text"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="28dp"
         android:autofillHints=""
-        android:drawableEnd="@drawable/ic_eye"
-        android:hint="@string/senha"
+        android:drawableEnd="@drawable/boy"
+        android:hint="@string/nome"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
         app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/edit_email"
-        tools:ignore="TextFields" />
+        app:layout_constraintTop_toTopOf="@+id/containerComponentes" />
 
     <EditText
         android:id="@+id/edit_email"
@@ -80,24 +80,27 @@
         android:autofillHints=""
         android:drawableEnd="@drawable/ic_email"
         android:hint="@string/email"
-        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
+        android:inputType="text|textEmailAddress"
 
+        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
         app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/edit_bairro"
+        app:layout_constraintTop_toTopOf="@+id/edit_nome"
         tools:ignore="TextFields" />
 
     <EditText
-        android:id="@+id/edit_bairro"
+        android:id="@+id/edit_senha"
         style="@style/Edit_Text"
-        android:layout_marginTop="28dp"
-        android:drawableEnd="@drawable/boy"
-        android:hint="@string/nome"
+        android:layout_marginTop="72dp"
+        android:autofillHints=""
+        android:drawableEnd="@drawable/ic_eye"
+        android:hint="@string/senha"
+        android:inputType="number|numberPassword"
         app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
         app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/containerComponentes"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="@+id/edit_email"
+        tools:ignore="TextFields" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_proximo"

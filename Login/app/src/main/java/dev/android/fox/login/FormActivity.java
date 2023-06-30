@@ -3,12 +3,14 @@ package dev.android.fox.login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,6 +32,8 @@ public class FormActivity extends AppCompatActivity {
 
     private EditText editNome, editEmail, editSenha;
     private Button btProximo;
+
+    private TextView text_telaLogin;
     String[] mensagens = {"Preencha todos os campos", "Cadasro Realizado com sucesso"};
     String usuarioID;
     @Override
@@ -38,6 +42,14 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_form_nova_conta);
 
         IniciarComponentes();
+
+        text_telaLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FormActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
          btProximo.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -141,6 +153,7 @@ public class FormActivity extends AppCompatActivity {
         editNome = findViewById(R.id.edit_nome);
         editEmail = findViewById(R.id.edit_email);
         editSenha = findViewById(R.id.edit_senha);
+        text_telaLogin = findViewById(R.id.text_tela_login);
         btProximo = findViewById(R.id.bt_proximo);
 
     }

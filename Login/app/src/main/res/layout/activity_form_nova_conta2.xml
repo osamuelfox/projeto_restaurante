@@ -57,6 +57,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_passo" />
 
+
+    <ProgressBar
+        android:id="@+id/progresseBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/text_tela_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponentes" />
+
     <EditText
         android:id="@+id/edit_endereco"
         style="@style/Edit_Text"
@@ -126,12 +139,13 @@
         app:layout_constraintStart_toStartOf="@id/containerComponentes"
         app:layout_constraintTop_toTopOf="@+id/edit_cep" />
 
-    <Button
+    <TextView
         android:id="@+id/text_tela_login"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:backgroundTint="#FFFFFF"
         android:text="@string/text_login"
+        android:gravity="center"
         android:textColor="@color/cinza"
         android:textSize="18sp"
         android:textStyle="bold"

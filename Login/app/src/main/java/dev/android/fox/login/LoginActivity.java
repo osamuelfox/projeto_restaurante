@@ -32,9 +32,6 @@ public class LoginActivity extends AppCompatActivity {
 
     String[] mensagens = {"Preencha todos os campos", "Login Realizado com sucesso"};
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,14 +52,14 @@ public class LoginActivity extends AppCompatActivity {
                 String email = editEmail.getText().toString();
                 String senha = editSenha.getText().toString();
 
-                if (email.isEmpty() || senha.isEmpty()){
+                if (email.isEmpty() || senha.isEmpty()) {
 
-                    Snackbar snackbar = Snackbar.make(v,mensagens[0],Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
 
-                }else {
+                } else {
                     AutenticarUsuario(v);
                 }
             }
@@ -74,11 +71,11 @@ public class LoginActivity extends AppCompatActivity {
         String email = editEmail.getText().toString();
         String senha = editSenha.getText().toString();
 
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     progressBar.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -86,19 +83,19 @@ public class LoginActivity extends AppCompatActivity {
                             TelaPrinciapl();
 
                         }
-                    },3000);
+                    }, 3000);
 
-                }else {
+                } else {
                     String erro;
                     try {
                         throw task.getException();
 
-                    }catch (Exception e){
+                    } catch (Exception e) {
 
                         erro = "Erro ao logar usuário";
 
                     }
-                    Snackbar snackbar = Snackbar.make(view,erro,Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
@@ -113,19 +110,19 @@ public class LoginActivity extends AppCompatActivity {
 
         FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (usuarioAtual != null){
+        if (usuarioAtual != null) {
             TelaPrinciapl();
 
         }
     }
 
-    private void TelaPrinciapl(){
+    private void TelaPrinciapl() {
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
         startActivity(intent);
         finish();
     }
 
-    private void IniciarComponentes(){
+    private void IniciarComponentes() {
         editEmail = findViewById(R.id.edit_email);
         editSenha = findViewById(R.id.edit_senha);
         bt_acessar = findViewById(R.id.bt_acessar);

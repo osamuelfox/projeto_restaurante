@@ -36,6 +36,7 @@ public class FormActivity extends AppCompatActivity {
     private TextView text_telaLogin;
     String[] mensagens = {"Preencha todos os campos", "Cadasro Realizado com sucesso"};
     String usuarioID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,23 +52,25 @@ public class FormActivity extends AppCompatActivity {
             }
         });
 
-         btProximo.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 String nome = editNome.getText().toString();
-                 String email = editEmail.getText().toString();
-                 String senha = editSenha.getText().toString();
-                 if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()){
-                     Snackbar snackbar = Snackbar.make(v,mensagens[0],Snackbar.LENGTH_SHORT);
-                     snackbar.setBackgroundTint(Color.WHITE);
-                     snackbar.setTextColor(Color.BLACK);
-                     snackbar.show();
-                 }else{
-                     CadastrarUsuario(v);
+        btProximo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nome = editNome.getText().toString();
+                String email = editEmail.getText().toString();
+                String senha = editSenha.getText().toString();
+                if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+                    Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                } else {
+                    CadastrarUsuario(v);
+                }
 
-                 }
-             }
-         });
+                Intent intent = new Intent(FormActivity.this, Form2Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void CadastrarUsuario(View v) {
@@ -75,15 +78,15 @@ public class FormActivity extends AppCompatActivity {
         String email = editEmail.getText().toString();
         String senha = editSenha.getText().toString();
 
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
 
                     SalvarDadosUsuario();
 
-                    Snackbar snackbar = Snackbar.make(v,mensagens[1],Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(v, mensagens[1], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
@@ -93,24 +96,24 @@ public class FormActivity extends AppCompatActivity {
                     try {
                         throw task.getException();
 
-                    }catch (FirebaseAuthWeakPasswordException e){
+                    } catch (FirebaseAuthWeakPasswordException e) {
 
                         erro = "Digite uma senha com 6 caracteres";
 
-                    }catch (FirebaseAuthUserCollisionException e){
+                    } catch (FirebaseAuthUserCollisionException e) {
 
                         erro = "Essa conta já foi cadastrada";
 
-                    }catch (FirebaseAuthInvalidCredentialsException e){
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
 
                         erro = "Email invalido";
 
-                    }catch (Exception e){
+                    } catch (Exception e) {
 
                         erro = "Erro ao cadastrar usuário";
 
                     }
-                    Snackbar snackbar = Snackbar.make(v,erro,Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
@@ -132,13 +135,13 @@ public class FormActivity extends AppCompatActivity {
 
         DocumentReference documentReference = db.collection("Usuario").document(usuarioID);
         documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
+                    @Override
+                    public void onSuccess(Void aVoid) {
 
-                Log.d("db","Sucesso ao salvar os dados");
+                        Log.d("db", "Sucesso ao salvar os dados");
 
-            }
-        })
+                    }
+                })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
@@ -149,7 +152,7 @@ public class FormActivity extends AppCompatActivity {
                 });
     }
 
-    private void IniciarComponentes(){
+    private void IniciarComponentes() {
         editNome = findViewById(R.id.edit_nome);
         editEmail = findViewById(R.id.edit_email);
         editSenha = findViewById(R.id.edit_senha);

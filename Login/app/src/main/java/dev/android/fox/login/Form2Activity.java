@@ -26,8 +26,6 @@ import java.util.Map;
 
 public class Form2Activity extends AppCompatActivity {
 
-    Form2Activity f2 = new Form2Activity();
-
     private EditText editEndereco, editBairro, editCidade, editUf, editCep;
     private Button bt_CriarConta;
 
@@ -63,12 +61,13 @@ public class Form2Activity extends AppCompatActivity {
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
                 } else {
-                    SalvarDadosUsuario(v);
+                    SalvarDadosUsuario();
                     progressBar.setVisibility(View.VISIBLE);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            telaDeLogin();
+                            Intent intent = new Intent(Form2Activity.this, LoginActivity.class);
+                            startActivity(intent);
 
                         }
                     }, 3000);
@@ -89,7 +88,7 @@ public class Form2Activity extends AppCompatActivity {
         });
     }
 
-    private void SalvarDadosUsuario(View v) {
+    private void SalvarDadosUsuario() {
 
         String endereco = editEndereco.getText().toString();
         String bairro = editBairro.getText().toString();
@@ -99,17 +98,17 @@ public class Form2Activity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> usuarios = new HashMap<>();
-        usuarios.put("endereco", endereco);
-        usuarios.put("bairro", bairro);
-        usuarios.put("cidade", cidade);
-        usuarios.put("uf", uf);
-        usuarios.put("cep", cep);
+        Map<String, Object> Endereco = new HashMap<>();
+        Endereco.put("endereco", endereco);
+        Endereco.put("bairro", bairro);
+        Endereco.put("cidade", cidade);
+        Endereco.put("uf", uf);
+        Endereco.put("cep", cep);
 
         usuarioID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        DocumentReference documentReference = db.collection("Usuario").document(usuarioID);
-        documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
+        DocumentReference documentReference = db.collection("Endereco").document(usuarioID);
+        documentReference.set(Endereco).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
 

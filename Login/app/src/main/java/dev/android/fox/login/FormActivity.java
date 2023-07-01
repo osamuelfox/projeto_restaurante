@@ -67,8 +67,7 @@ public class FormActivity extends AppCompatActivity {
                     CadastrarUsuario(v);
                 }
 
-                Intent intent = new Intent(FormActivity.this, Form2Activity.class);
-                startActivity(intent);
+
             }
         });
     }
@@ -90,6 +89,10 @@ public class FormActivity extends AppCompatActivity {
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
+
+                    Intent intent = new Intent(FormActivity.this, Form2Activity.class);
+                    startActivity(intent);
+
 
                 } else {
                     String erro;
@@ -150,6 +153,12 @@ public class FormActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void TelaForm2() {
+        Intent intent = new Intent(FormActivity.this, Form2Activity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void IniciarComponentes() {

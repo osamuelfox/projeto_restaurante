@@ -3,11 +3,13 @@ package dev.android.fox.login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -52,6 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                 String email = editEmail.getText().toString();
                 String senha = editSenha.getText().toString();
 
+                fecharTeclado();
+
                 if (email.isEmpty() || senha.isEmpty()) {
 
                     Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
@@ -90,6 +94,14 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         throw task.getException();
 
+                    } catch (FirebaseAuthWeakPasswordException e) {
+
+                        erro = "Digite uma senha com 6 caracteres";
+
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+
+                        erro = "Email invalido";
+
                     } catch (Exception e) {
 
                         erro = "Erro ao logar usuário";
@@ -102,6 +114,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void fecharTeclado(){
+        View view = this.getCurrentFocus();
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+
     }
 
     @Override

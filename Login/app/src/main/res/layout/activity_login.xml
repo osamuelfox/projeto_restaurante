@@ -36,25 +36,27 @@
     <EditText
         android:id="@+id/edit_email"
         style="@style/Edit_Text"
+        android:autofillHints=""
         android:drawableEnd="@drawable/ic_email"
         android:hint="@string/email"
+        android:inputType="text|textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
+
         app:layout_constraintStart_toStartOf="@+id/containerComponentes"
         app:layout_constraintTop_toTopOf="@+id/containerComponentes"
-
-        android:autofillHints=""
         tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/edit_senha"
         style="@style/Edit_Text"
         android:layout_marginTop="76dp"
+        android:autofillHints=""
         android:drawableEnd="@drawable/ic_eye"
         android:hint="@string/senha"
+        android:inputType="number|numberPassword"
         app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
         app:layout_constraintStart_toStartOf="@+id/containerComponentes"
         app:layout_constraintTop_toTopOf="@+id/edit_email"
-        android:autofillHints=""
         tools:ignore="TextFields" />
 
     <androidx.appcompat.widget.AppCompatButton

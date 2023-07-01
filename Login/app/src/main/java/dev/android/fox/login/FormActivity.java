@@ -3,11 +3,13 @@ package dev.android.fox.login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,6 +60,9 @@ public class FormActivity extends AppCompatActivity {
                 String nome = editNome.getText().toString();
                 String email = editEmail.getText().toString();
                 String senha = editSenha.getText().toString();
+
+                fecharTeclado();
+
                 if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
                     Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
@@ -125,6 +130,13 @@ public class FormActivity extends AppCompatActivity {
         });
     }
 
+    private void fecharTeclado(){
+        View view = this.getCurrentFocus();
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+
+    }
+
     private void SalvarDadosUsuario() {
 
         String nome = editNome.getText().toString();
@@ -155,11 +167,6 @@ public class FormActivity extends AppCompatActivity {
                 });
     }
 
-    private void TelaForm2() {
-        Intent intent = new Intent(FormActivity.this, Form2Activity.class);
-        startActivity(intent);
-        finish();
-    }
 
     private void IniciarComponentes() {
         editNome = findViewById(R.id.edit_nome);

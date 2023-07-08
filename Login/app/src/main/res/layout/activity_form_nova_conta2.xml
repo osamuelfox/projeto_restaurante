@@ -7,158 +7,145 @@
     android:background="@color/white"
     tools:context=".Form2Activity">
 
-    <ImageView
-        android:id="@+id/logo"
+    <ScrollView
+
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_conta"
-        android:layout_width="156dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/criar_nova_conta"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_passo"
-        android:layout_width="106dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/passo_2_de_2"
-        android:textColor="@color/cinza"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_conta" />
-
-    <View
-        android:id="@+id/containerComponentes"
-        style="@style/ConteinerComponentes"
-        android:layout_width="362dp"
-        android:layout_height="449dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_passo" />
-
-
-    <ProgressBar
-        android:id="@+id/progresseBar"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/text_tela_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/containerComponentes"
-        app:layout_constraintVertical_bias="0.52" />
+        tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/edit_endereco"
-        style="@style/Edit_Text"
-        android:layout_marginTop="28dp"
+        <LinearLayout
 
-        android:autofillHints=""
-        android:hint="@string/endereco"
-        android:inputType="text|textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
-        app:layout_constraintHorizontal_bias="0.259"
-        app:layout_constraintStart_toStartOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/containerComponentes" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edit_bairro"
-        style="@style/Edit_Text"
-        android:layout_marginTop="80dp"
-        android:autofillHints=""
-        android:hint="@string/bairro"
-        android:inputType="text|textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
-        app:layout_constraintHorizontal_bias="0.413"
-        app:layout_constraintStart_toStartOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/edit_endereco" />
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="16dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/logo"
+                 />
 
-    <EditText
-        android:id="@+id/edit_cidade"
-        style="@style/Edit_Text"
-        android:layout_marginTop="80dp"
-        android:layout_marginRight="120dp"
-        android:autofillHints=""
-        android:hint="@string/cidade"
-        android:inputType="text|textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/edit_uf"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/edit_bairro" />
+            <TextView
+                android:id="@+id/text_conta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:text="@string/criar_nova_conta"
+                android:textSize="20sp"
 
-    <EditText
-        android:id="@+id/edit_uf"
-        style="@style/Edit_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="16dp"
-        android:autofillHints=""
-        android:hint="@string/uf"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/edit_bairro"
-        tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toBottomOf="@+id/logo"
+                tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/edit_cep"
-        style="@style/Edit_Text"
-        android:layout_marginTop="80dp"
-        android:autofillHints=""
-        android:hint="@string/cep"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/containerComponentes"
-        app:layout_constraintHorizontal_bias="0.413"
-        app:layout_constraintStart_toStartOf="@+id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/edit_cidade" />
+            <TextView
+                android:id="@+id/text_passo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/passo_2_de_2"
+                android:textColor="@color/cinza"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_conta" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_criarConta"
-        style="@style/Button"
-        android:layout_marginTop="80dp"
-        android:text="@string/criarConta"
-        app:layout_constraintBottom_toBottomOf="@+id/containerComponentes"
-        app:layout_constraintEnd_toEndOf="@id/containerComponentes"
-        app:layout_constraintStart_toStartOf="@id/containerComponentes"
-        app:layout_constraintTop_toTopOf="@+id/edit_cep" />
 
-    <TextView
-        android:id="@+id/text_tela_login"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="@string/text_login"
-        android:gravity="center"
-        android:textColor="@color/cinza"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerComponentes"
-        app:layout_constraintVertical_bias="1.0" />
+            <EditText
+                android:id="@+id/edit_endereco"
+                style="@style/Edit_Text"
+                android:layout_marginTop="25dp"
+                android:autofillHints=""
+                android:hint="@string/endereco"
+                android:inputType="text|textPersonName" />
+
+            <EditText
+                android:id="@+id/edit_bairro"
+                style="@style/Edit_Text"
+                android:layout_marginTop="25dp"
+                android:autofillHints=""
+                android:hint="@string/bairro"
+                android:inputType="text|textPersonName" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_cidade"
+                    style="@style/Edit_Text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="25dp"
+                    android:autofillHints=""
+                    android:hint="@string/cidade"
+                    android:inputType="text|textPersonName"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/edit_uf"
+                    app:layout_constraintHorizontal_bias="0.145"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <EditText
+                    android:id="@+id/edit_uf"
+                    style="@style/Edit_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:autofillHints=""
+                    android:hint="@string/uf"
+                    android:inputType="text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <EditText
+                android:id="@+id/edit_cep"
+                style="@style/Edit_Text"
+                android:layout_marginTop="25dp"
+                android:autofillHints=""
+                android:hint="@string/cep"
+                android:inputType="number" />
+
+            <ProgressBar
+                android:id="@+id/progresseBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_criarConta"
+                style="@style/Button"
+                android:layout_marginTop="25dp"
+                android:text="@string/criarConta" />
+
+            <TextView
+                android:id="@+id/text_tela_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="#FFFFFF"
+                android:gravity="center"
+                android:text="@string/text_login"
+                android:textColor="@color/cinza"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
